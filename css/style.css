@@ -1,0 +1,140 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  background: #999;
+}
+
+main {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+aside {
+  width: 25%;
+  height: 100vh;
+  background-color: #333;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+}
+
+
+aside .text h3 {
+  margin-top: 4rem;
+}
+
+aside .display {
+  margin-top: 6rem;
+}
+
+aside .display input {
+  width: 150px;
+  height: 50px;
+  font-size: 2.5rem;
+  text-align: center;
+  border-radius: 1.5rem;
+  outline: 0;
+  background-color: green;
+  color: black;
+}
+
+.memory-game {
+  width: 70%;
+  height: 90vh;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  perspective: 1000px;
+}
+
+.memory-card {
+  width: calc(16.66% - 10px);
+  height: calc(25% - 10px);
+  margin: 5px;
+  position: relative;
+  box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform .5s;
+}
+
+.memory-card.flip {
+  transform: rotateY(180deg);
+}
+
+.memory-card:active {
+  transform: scale(0.97);
+  transition: transform .2s;
+}
+
+.front-face,
+.back-face {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  position: absolute;
+  border-radius: 5px;
+  background: #fff;
+  backface-visibility: hidden;
+}
+
+.front-face {
+  transform: rotateY(180deg);
+}
+
+section.congratulations {
+  width: 100%;
+  text-align: center;
+  background-image: url(../images/bg1.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  display: none;
+}
+
+section.congratulations h2, section.miss h2 {
+  font-size: 5rem;
+  color: #fff;
+  font-weight: bold;
+  margin: 200px 0 30px 0;
+  text-shadow: 4px 4px 2px rgba(25, 25, 25, 1);
+}
+
+section.congratulations input {
+  width: 180px;
+  height: 70px;
+  font-size: 4rem;
+  text-align: center;
+  border-radius: 2rem;
+  outline: 0;
+  background-color: green;
+  color: black;
+}
+
+section.miss {
+  width: 100%;
+  text-align: center;
+  background-image: url(../images/bg2.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  display: none;
+}
+
+section.miss input {
+  width: 180px;
+  height: 70px;
+  font-size: 4rem;
+  text-align: center;
+  border-radius: 2rem;
+  outline: 0;
+  background-color: red;
+  color: black;
+}
